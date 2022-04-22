@@ -13,10 +13,23 @@ export const NoteModal = () => {
     const [title, setTitle] = useState('')
     const [titleText, setTitleText] = useState('')
 
+    const onCloseModal = () => {
+        handleOpen()
+        setTitle('')
+        setTitleText('')
+    }
+
+    const onNoteCreate = () => {
+        dispatch(addNewPost({title, titleText}))
+        handleOpen()
+        setTitle('')
+        setTitleText('')
+    }
+
     return(
         <div>
         <button onClick={handleOpen}>Добавить новую запись</button>
-    <Modal open={open} onClose={handleOpen}>
+    <Modal open={open} onClose={onCloseModal}>
             <Box className='modal-box'>
                 <input value={title}
                        onChange={(e) => setTitle(e.target.value)}
@@ -25,8 +38,8 @@ export const NoteModal = () => {
                        onChange={(e) => setTitleText(e.target.value)}
                        className='modal-text' placeholder='content'/>
                 <div>
-                    <button onClick={handleOpen}>Отмена</button>
-                    <button onClick={() => dispatch(addNewPost({title, titleText}))}>Сохранить</button>
+                    <button onClick={onCloseModal}>Отмена</button>
+                    <button disabled={!title || !titleText} onClick={onNoteCreate}>Сохранить</button>
                 </div>
             </Box>
         </Modal>

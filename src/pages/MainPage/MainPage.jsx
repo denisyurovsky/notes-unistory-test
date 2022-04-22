@@ -1,7 +1,7 @@
-import {NoteCard} from "../NoteCard/NoteCard";
+import {NoteCard} from "../../components/NoteCard/NoteCard";
 import {useSelector} from "react-redux";
 import './MainPage.css'
-import {NoteModal} from '../Modal/Modal'
+import {NoteModal} from '../../components/Modal/Modal'
 
 export const MainPage = () => {
 

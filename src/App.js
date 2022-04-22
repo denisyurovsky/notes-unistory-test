@@ -1,7 +1,7 @@
 import './App.css'
 import {Route, Routes} from "react-router";
-import {MainPage} from "./components/MainPage/MainPage";
-import {NotePage} from "./components/NotePage/NotePage";
+import {MainPage} from "./pages/MainPage/MainPage";
+import {NotePage} from "./pages/NotePage/NotePage";
 
 
 function App() {

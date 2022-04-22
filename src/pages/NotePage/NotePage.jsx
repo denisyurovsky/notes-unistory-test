@@ -39,7 +39,7 @@ export const NotePage = () => {
                       value={titleText}/>
             <div className='note-buttons-container'>
                 <button onClick={onRemoveNote}>Удалить</button>
-                <button onClick={onChangeNote}>Сохранить</button>
+                <button disabled={!title || !titleText} onClick={onChangeNote}>Сохранить</button>
             </div>
         </div>
     )
